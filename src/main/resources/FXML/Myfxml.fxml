@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="vbox" fx:controller = "MyController"
+			fx:id = "root">
+	<!-- TODO Add Nodes -->
+	
+	
+	<Button fx:id = "helloButton" text = "hello" onAction = "#helloMethod"/>
+    <TextField fx:id = "textField"/>
+	<Button fx:id = "helloButton2" text = "hello2" />
+	<Button fx:id = "helloButton3" text = "hello3" />
+	
+</VBox>
+

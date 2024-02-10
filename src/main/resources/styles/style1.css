@@ -1,0 +1,12 @@
+.button{
+	-fx-font-size: 14px;
+	-fx-font-weight: bold;
+	-fx-background-color: green
+}
+
+.vbox{
+	-fx-background-color: purple;
+
+}
+
+
