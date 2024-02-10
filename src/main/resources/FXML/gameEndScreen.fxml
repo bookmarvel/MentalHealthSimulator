@@ -4,24 +4,35 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id = "root2" fx:controller = "MyController">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+			fx:id = "root2" fx:controller = "MyController"
+			styleClass="borderpane">
+
+	<padding>
+		<Insets top="10" right="40" bottom="10" left="40"/>
+	</padding>
 	
 	<center>
-		<VBox styleClass="displayText" spacing="10" alignment="CENTER">
+		<VBox spacing="15" alignment="CENTER">
 			<TextField fx:id ="gameEndHeader"
+					   styleClass="endGameDisplays"
 					   text="Game Over"
 					   editable="false"
 			/>
 			<TextField fx:id ="gameEndStatus"
+					   styleClass="endGameDisplays"
 					   text="Game ended because ..."
 					   editable="false"
 			/>
 			<TextField fx:id ="scoreText"
+					   styleClass="endGameDisplays"
 					   text="Your score is:"
 					   editable="false"
 			/>
 			<TextField fx:id ="scoreDisplay"
+					   styleClass="endGameDisplays"
 					   text="5"
 					   editable="false"
 			/>

@@ -45,7 +45,7 @@
 							   prefHeight="33"
 							   editable="false"
 					/>
-					<TextField fx:id="chorseLeftDisplay"
+					<TextField fx:id="choresLeftDisplay"
 							   text="Hours of class left in week: 5"
 							   prefWidth="600"
 							   prefHeight="32"

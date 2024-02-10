@@ -1,3 +1,5 @@
+/* MAIN GAME SCREEN */
+
 Button{
 	-fx-font-size: 18px;
 	-fx-font-weight: bold;
@@ -37,4 +39,13 @@ Button{
 .displayText{
 	-fx-font-size: 14;
 	-fx-font-weight: bold;
+}
+
+/* END GAME SCREEN */
+
+.endGameDisplays {
+	-fx-alignment: center;
+	-fx-font-size: 22;
+	-fx-font-weight: bold;
+
 }
