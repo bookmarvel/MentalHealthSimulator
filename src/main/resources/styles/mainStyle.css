@@ -1,6 +1,7 @@
 .button{
-	-fx-font-size: 14px;
+	-fx-font-size: 16px;
 	-fx-font-weight: bold;
+	-fx-pref-height: 40;
 	-fx-background-color: green
 }
 

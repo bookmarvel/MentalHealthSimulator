@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" styleClass="borderpane" fx:controller = "MyController"
+			fx:id = "root">
+	<padding>
+		<Insets top="10" right="10" bottom="10" left="10"/>
+	</padding>
+	<top>
+		<HBox fx:id = "displaysHbox">
+			<VBox fx:id = "left">
+				<HBox>
+					<TextField fx:id = "currTimeText"
+							   text="Date and time:"
+							   prefWidth="300"
+							   prefHeight="40"
+							   editable="false"
+					/>
+					<TextField fx:id="currDayDisplay"
+							   text="Sunday"
+							   prefWidth="100"
+							   prefHeight="40"
+							   editable="false"
+					/>
+					<TextField fx:id="currTimeDisplay"
+							   text="6:00 am"
+							   prefWidth="100"
+							   prefHeight="40"
+							   editable="false"
+					/>
+				</HBox>
+				<TextField fx:id = "actionLog"
+						   text="change later to ListView"
+						   prefWidth="500"
+						   prefHeight="130"
+						   editable="false"
+				/>
+			</VBox>
+			<VBox fx:id = "right">
+				<TextField fx:id = "mentalHealthText"
+						   text="Mental health:"
+						   prefWidth="300"
+						   prefHeight="30"
+						   editable="false"
+				/>
+				<ProgressBar fx:id="mentalHealthBar"
+							 progress = "0.5F"
+							 prefWidth="300"
+							 prefHeight="40"
+				/>
+				<TextField fx:id = "foodText"
+						   text="Food:"
+						   prefWidth="300"
+						   prefHeight="30"
+						   editable="false"
+				/>
+				<ProgressBar fx:id="foodBar"
+							 progress = "0.5F"
+							 prefWidth="300"
+							 prefHeight="40"
+				/>
+				<TextField fx:id = "moneyDisplay"
+						   text="\$100"
+						   prefWidth="300"
+						   prefHeight="30"
+						   editable="false"
+				/>
+			</VBox>
+		</HBox>
+	</top>
+
+	<center>
+		<VBox>
+			<HBox fx:id="buttonLayer1" alignment="CENTER">
+				<padding>
+					<Insets top="10" right="10" bottom="10" left="10"/>
+				</padding>
+				<Button fx:id = "bDoWork" text = "work" />
+				<Button fx:id = "bGoClass" text = "class" />
+				<Button fx:id = "bDoHW" text = "hw" />
+				<Button fx:id = "bDoChores" text = "chores" />
+			</HBox>
+			<HBox fx:id="buttonLayer2" alignment="CENTER">
+				<padding>
+					<Insets top="10" right="10" bottom="10" left="10"/>
+				</padding>
+				<Button fx:id = "bWatchTV" text = "tv" />
+				<Button fx:id = "bTakeNap" text = "nap" />
+				<Button fx:id = "bGoWalk" text = "walk" />
+			</HBox>
+			<HBox fx:id="buttonLayer3" alignment="CENTER">
+				<padding>
+					<Insets top="10" right="10" bottom="10" left="10"/>
+				</padding>
+				<Button fx:id = "bCookMeal" text = "cook" />
+				<Button fx:id = "bOrderFood" text = "order out" />
+				<Button fx:id = "bMakeSnack" text = "snack" />
+			</HBox>
+			<HBox fx:id="buttonLayer4">
+				<padding>
+					<Insets top="10" right="10" bottom="10" left="10"/>
+				</padding>
+				<Button fx:id = "bGoSleep" text = "sleep" />
+			</HBox>
+		</VBox>
+	</center>
+	
+</BorderPane>
+

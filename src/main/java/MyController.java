@@ -21,6 +21,7 @@ public class MyController implements Initializable {
 	@FXML
 	private BorderPane root;
 
+    // DISPLAYS -------------------------------------------------------------------------
     @FXML
     private HBox displaysHbox;
 
@@ -28,10 +29,14 @@ public class MyController implements Initializable {
     private VBox left;
 
     @FXML
-    private TextField timeLeftText;
+    private TextField currTimeText;
 
     @FXML
-    private TextField timeLeftDisplay;
+    private TextField currTimeDisplay;
+
+    @FXML
+    private
+    TextField currDayDisplay;
 
     @FXML
     private TextField actionLog;
@@ -40,13 +45,85 @@ public class MyController implements Initializable {
     private VBox right;
 
     @FXML
+    private TextField mentalHealthText;
+
+    @FXML
     private ProgressBar mentalHealthBar;
+
+    @FXML
+    private TextField foodText;
 
     @FXML
     private ProgressBar foodBar;
 
     @FXML
     private TextField moneyDisplay;
+
+
+    // BUTTONS  -------------------------------------------------------------------------
+
+    @FXML
+    private HBox buttonLayer1;
+
+    @FXML
+    private Button bDoWork;
+
+    @FXML
+    private Button bGoClass;
+
+    @FXML
+    private Button bDoHW;
+
+    @FXML
+    private Button bDoChores;
+
+    @FXML
+    private HBox buttonLayer2;
+
+    @FXML
+    private Button bWatchTV;
+
+    @FXML
+    private Button bTakeNap;
+
+    @FXML
+    private Button bGoWalk;
+
+    @FXML
+    private HBox buttonLayer3;
+
+    @FXML
+    private Button bCookMeal;
+
+    @FXML
+    private Button bOrderFood;
+
+    @FXML
+    private Button bMakeSnack;
+
+    @FXML
+    private HBox buttonLayer4;
+
+    @FXML
+    private Button bGoSleep;
+
+
+    // EVENT HANDLERS -------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // old things
 	@FXML
@@ -113,7 +190,7 @@ public class MyController implements Initializable {
         textEntered = putText.getText();
         System.out.println(textEntered);
         
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Myfxml.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/mainGamePage.fxml"));
         Parent root = loader.load();
         MyController myctr = loader.getController();
         myctr.setText2();
@@ -121,7 +198,7 @@ public class MyController implements Initializable {
         
         /*
 		Parent root = FXMLLoader.load(getClass()
-                .getResource("/FXML/Myfxml.fxml"));
+                .getResource("/FXML/mainGamePage.fxml"));
 		 
 		 root2.getScene().setRoot(root);
          */

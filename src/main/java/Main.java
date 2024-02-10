@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 
 
 public class Main extends Application {
@@ -14,11 +13,11 @@ public class Main extends Application {
 		 try {
 	            // Read file fxml and draw interface.
 	            Parent root = FXMLLoader.load(getClass()
-	                    .getResource("/FXML/Myfxml.fxml"));
+	                    .getResource("/FXML/mainGamePage.fxml"));
 	 
 	            primaryStage.setTitle("My Application");
              Scene s1 = new Scene(root, 800,500);
-             s1.getStylesheets().add("/styles/style1.css");
+             s1.getStylesheets().add("/styles/mainStyle.css");
 	            primaryStage.setScene(s1);
 	            primaryStage.show();
 	         
