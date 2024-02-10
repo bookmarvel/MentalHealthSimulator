@@ -1,8 +1,6 @@
-import java.util.concurrent.BrokenBarrierException;
-
 public class GameState {
     public enum DaysOfTheWeek {
-        SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
+        Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
     }
     DaysOfTheWeek day;
     int time;//Minutes since start of day
@@ -68,25 +66,25 @@ public class GameState {
         this.time = 0;
         lossFoodOverTime(minutesSlept / 2);
         switch (day){
-            case SUNDAY:
-                day = DaysOfTheWeek.MONDAY;
-            case MONDAY:
-                day = DaysOfTheWeek.TUESDAY;
+            case Sunday:
+                day = DaysOfTheWeek.Monday;
+            case Monday:
+                day = DaysOfTheWeek.Tuesday;
                 break;
-            case TUESDAY:
-                day = DaysOfTheWeek.WEDNESDAY;
+            case Tuesday:
+                day = DaysOfTheWeek.Wednesday;
                 break;
-            case WEDNESDAY:
-                day = DaysOfTheWeek.THURSDAY;
+            case Wednesday:
+                day = DaysOfTheWeek.Thursday;
                 break;
-            case THURSDAY:
-                day = DaysOfTheWeek.FRIDAY;
+            case Thursday:
+                day = DaysOfTheWeek.Friday;
                 break;
-            case FRIDAY:
-                day = DaysOfTheWeek.SATURDAY;
+            case Friday:
+                day = DaysOfTheWeek.Saturday;
                 break;
-            case SATURDAY:
-                day = DaysOfTheWeek.SUNDAY;
+            case Saturday:
+                day = DaysOfTheWeek.Sunday;
                 gameEnded = true;
                 break;
         }
@@ -119,7 +117,7 @@ public class GameState {
     }
     public void watchTV(){
         this.time += 60;
-        lossFoodOverTime(30);
+        lossFoodOverTime(60);
         addMentalHealth(25);
     }
     public void takeNap(){

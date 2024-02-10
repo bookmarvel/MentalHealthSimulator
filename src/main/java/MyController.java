@@ -108,10 +108,36 @@ public class MyController implements Initializable {
     void updateGUI(){
         mentalHealthBar.setProgress(Main.gameState.mentalHealth / 100.0);
         foodBar.setProgress(Main.gameState.food / 100.0);
+        moneyDisplay.setText(Main.gameState.getMoney());
+        currTimeDisplay.setText(Main.gameState.getTime());
+        currDayDisplay.setText(Main.gameState.day.toString());
+
+        int timeLeftInDay = 1080 - Main.gameState.time;
+
+        if (timeLeftInDay < 90){
+            bCookMeal.setDisable(true);
+        }
+        if (timeLeftInDay < 60){
+            bDoChores.setDisable(true);
+            bDoHW.setDisable(true);
+            bDoWork.setDisable(true);
+            bGoClass.setDisable(true);
+            bWatchTV.setDisable(true);
+        }
+        if (timeLeftInDay < 30){
+            bOrderFood.setDisable(true);
+            bTakeNap.setDisable(true);
+            bGoWalk.setDisable(true);
+        }
+        if (timeLeftInDay < 15){
+            bMakeSnack.setDisable(true);
+        }
     }
 
     void checkGameLose(){
-
+        if(Main.gameState.gameLost){
+            //TODO deal with losing the game
+        }
     }
 
     // EVENT HANDLERS -------------------------------------------------------------------
@@ -177,6 +203,18 @@ public class MyController implements Initializable {
         Main.gameState.gotoSleep();
         updateGUI();
         checkGameLose();
+
+        bCookMeal.setDisable(false);
+        bDoChores.setDisable(false);
+        bDoHW.setDisable(false);
+        bDoWork.setDisable(false);
+        bGoClass.setDisable(false);
+        bWatchTV.setDisable(false);
+        bOrderFood.setDisable(false);
+        bTakeNap.setDisable(false);
+        bGoWalk.setDisable(false);
+        bMakeSnack.setDisable(false);
+
         if(Main.gameState.gameEnded){
             //TODO things when game ends
         }
