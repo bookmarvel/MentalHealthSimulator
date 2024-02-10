@@ -1,18 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="vbox" fx:controller = "MyController"
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" styleClass="borderpane" fx:controller = "MyController"
 			fx:id = "root">
-	<!-- TODO Add Nodes -->
+
+	<top>
+		<HBox fx:id = "displaysHbox">
+			<VBox fx:id = "left">
+				<HBox>
+					<TextField fx:id = "timeLeftText"
+							   text="Time left in day:"
+							   prefWidth="300"
+							   prefHeight="40"
+							   editable="false"
+					/>
+					<TextField fx:id="timeLeftDisplay"
+							   text="1 hour"
+							   prefWidth="200"
+							   prefHeight="40"
+							   editable="false"
+					/>
+				</HBox>
+				<TextField fx:id = "actionLog"
+						   text="change later to ListView"
+						   prefWidth="500"
+						   prefHeight="100"
+						   editable="false"
+				/>
+			</VBox>
+			<VBox fx:id = "right">
+				<ProgressBar fx:id="mentalHealthBar"
+							 progress = "0.25F"
+							 prefWidth="300"
+							 prefHeight="20"
+				/>
+				<ProgressBar fx:id="foodBar"
+							 progress = "0.25F"
+							 prefWidth="300"
+							 prefHeight="20"
+				/>
+				<TextField fx:id = "moneyDisplay"
+						   text="\$100"
+						   prefWidth="300"
+						   prefHeight="20"
+						   editable="false"
+				/>
+			</VBox>
+		</HBox>
+	</top>
+
+
 	
-	
-	<Button fx:id = "helloButton" text = "hello" onAction = "#helloMethod"/>
-    <TextField fx:id = "textField"/>
-	<Button fx:id = "helloButton2" text = "hello2" />
-	<Button fx:id = "helloButton3" text = "hello3" />
-	
-</VBox>
+</BorderPane>
 

@@ -9,16 +9,46 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 public class MyController implements Initializable {
 	
 	@FXML
-	private VBox root;
-	
+	private BorderPane root;
+
+    @FXML
+    private HBox displaysHbox;
+
+    @FXML
+    private VBox left;
+
+    @FXML
+    private TextField timeLeftText;
+
+    @FXML
+    private TextField timeLeftDisplay;
+
+    @FXML
+    private TextField actionLog;
+
+    @FXML
+    private VBox right;
+
+    @FXML
+    private ProgressBar mentalHealthBar;
+
+    @FXML
+    private ProgressBar foodBar;
+
+    @FXML
+    private TextField moneyDisplay;
+
+    // old things
 	@FXML
 	private BorderPane root2;
     

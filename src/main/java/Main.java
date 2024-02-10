@@ -17,7 +17,7 @@ public class Main extends Application {
 	                    .getResource("/FXML/Myfxml.fxml"));
 	 
 	            primaryStage.setTitle("My Application");
-             Scene s1 = new Scene(root, 500,500);
+             Scene s1 = new Scene(root, 800,500);
              s1.getStylesheets().add("/styles/style1.css");
 	            primaryStage.setScene(s1);
 	            primaryStage.show();
