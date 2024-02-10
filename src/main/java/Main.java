@@ -19,7 +19,7 @@ public class Main extends Application {
 	                    .getResource("/FXML/mainGamePage.fxml"));
 	 
 	            primaryStage.setTitle("My Application");
-             Scene s1 = new Scene(root, 800,500);
+             Scene s1 = new Scene(root, 1000,500);
              s1.getStylesheets().add("/styles/mainStyle.css");
 	            primaryStage.setScene(s1);
 	            primaryStage.show();

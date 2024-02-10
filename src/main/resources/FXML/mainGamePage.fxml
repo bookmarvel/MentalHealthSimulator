@@ -10,12 +10,12 @@
 		<Insets top="10" right="10" bottom="10" left="10"/>
 	</padding>
 	<top>
-		<HBox fx:id = "displaysHbox">
+		<HBox fx:id = "displaysHbox" styleClass="displayText">
 			<VBox fx:id = "left">
 				<HBox>
 					<TextField fx:id = "currTimeText"
 							   text="Date and time:"
-							   prefWidth="300"
+							   prefWidth="400"
 							   prefHeight="40"
 							   editable="false"
 					/>
@@ -33,36 +33,36 @@
 					/>
 				</HBox>
 				<ListView fx:id = "actionLog"
-						   prefWidth="500"
+						   prefWidth="600"
 						   prefHeight="130"
 				/>
 			</VBox>
 			<VBox fx:id = "right">
 				<TextField fx:id = "mentalHealthText"
 						   text="Mental health:"
-						   prefWidth="300"
+						   prefWidth="400"
 						   prefHeight="30"
 						   editable="false"
 				/>
 				<ProgressBar fx:id="mentalHealthBar"
 							 progress = "0.5F"
-							 prefWidth="300"
+							 prefWidth="400"
 							 prefHeight="40"
 				/>
 				<TextField fx:id = "foodText"
 						   text="Food:"
-						   prefWidth="300"
+						   prefWidth="400"
 						   prefHeight="30"
 						   editable="false"
 				/>
 				<ProgressBar fx:id="foodBar"
 							 progress = "0.5F"
-							 prefWidth="300"
+							 prefWidth="400"
 							 prefHeight="40"
 				/>
 				<TextField fx:id = "moneyDisplay"
 						   text="\$100"
-						   prefWidth="300"
+						   prefWidth="400"
 						   prefHeight="30"
 						   editable="false"
 				/>
@@ -76,23 +76,23 @@
 				<Insets top="30" right="10" bottom="10" left="10"/>
 			</padding>
 			<HBox fx:id="buttonLayer1" alignment="CENTER" spacing="10">
-				<Button fx:id = "bDoWork" text = "work" styleClass="productive"/>
-				<Button fx:id = "bGoClass" text = "class" styleClass="productive"/>
-				<Button fx:id = "bDoHW" text = "hw" styleClass="productive"/>
-				<Button fx:id = "bDoChores" text = "chores" styleClass="productive"/>
+				<Button fx:id = "bDoWork" text = "Go to work | 1 hour | +$15" styleClass="productive" onAction="#handleDoWork"/>
+				<Button fx:id = "bGoClass" text = "Go to class | 1 hour" styleClass="productive" onAction="#handleGoClass"/>
+				<Button fx:id = "bDoHW" text = "Do homework | 1 hour" styleClass="productive" onAction="#handleDoHW"/>
+				<Button fx:id = "bDoChores" text = "Do chores | 1 hour" styleClass="productive" onAction="#handleDoChores"/>
 			</HBox>
 			<HBox fx:id="buttonLayer2" alignment="CENTER" spacing="10">
-				<Button fx:id = "bWatchTV" text = "tv" styleClass="relax"/>
-				<Button fx:id = "bTakeNap" text = "nap" styleClass="relax"/>
-				<Button fx:id = "bGoWalk" text = "walk" styleClass="relax"/>
+				<Button fx:id = "bWatchTV" text = "Watch TV | 1 hour" styleClass="relax" onAction="#handleWatchTv"/>
+				<Button fx:id = "bTakeNap" text = "Take a nap | 30 minutes" styleClass="relax" onAction="#handleTakeNap"/>
+				<Button fx:id = "bGoWalk" text = "Go for a walk | 30  minutes" styleClass="relax" onAction="#handleGoWalk"/>
 			</HBox>
 			<HBox fx:id="buttonLayer3" alignment="CENTER" spacing="10">
-				<Button fx:id = "bCookMeal" text = "cook" styleClass="food"/>
-				<Button fx:id = "bOrderFood" text = "order out" styleClass="food"/>
-				<Button fx:id = "bMakeSnack" text = "snack" styleClass="food"/>
+				<Button fx:id = "bCookMeal" text = "Cook a meal | 1 hour 30 minutes | -$5" styleClass="food" onAction="#handleCookMeal"/>
+				<Button fx:id = "bOrderFood" text = "Order food | 30 minutes | -$20" styleClass="food" onAction="#handleOrderFood"/>
+				<Button fx:id = "bMakeSnack" text = "Make a snack | 15 minutes | -$5" styleClass="food" onAction="#handleMakeSnack"/>
 			</HBox>
 			<HBox fx:id="buttonLayer4">
-				<Button fx:id = "bGoSleep" text = "sleep" styleClass="sleep"/>
+				<Button fx:id = "bGoSleep" text = "Go to sleep" styleClass="sleep" onAction="#handleGotoSleep"/>
 			</HBox>
 		</VBox>
 	</center>
