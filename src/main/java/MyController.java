@@ -135,6 +135,7 @@ public class MyController{
 
     // GAME MANAGEMENT FUNCTIONS  -------------------------------------------------------
 
+    //Update the GUI to reflect changes after completing a task
     void updateGUI(){
         mentalHealthBar.setProgress(Main.gameState.mentalHealth / 100.0);
         foodBar.setProgress(Main.gameState.food / 100.0);
@@ -147,7 +148,7 @@ public class MyController{
         jobLeftDisplay.setText("Hours of work left in week: " + (10 - Main.gameState.hoursWorked));
 
         int timeLeftInDay = 1080 - Main.gameState.time;
-
+        //Disable buttons for tasks the user no longer has time to do in the day
         if (timeLeftInDay < 90){
             bCookMeal.setDisable(true);
         }
@@ -175,6 +176,7 @@ public class MyController{
         }
     }
 
+    //Display the score and end scene when the game ends
     void gameEnded() {
         int score = Main.gameState.calculateScore();
 
@@ -188,7 +190,7 @@ public class MyController{
             status = status + "you survived a week!";
         }
 
-
+        //Change scene to game end scene
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/gameEndScreen.fxml"));
             Parent newRoot = loader.load();
@@ -277,6 +279,7 @@ public class MyController{
         updateGUI();
         checkGameLose();
 
+        //Reset all the buttons for the next day
         bCookMeal.setDisable(false);
         bDoChores.setDisable(false);
         bDoHW.setDisable(false);

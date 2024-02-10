@@ -14,15 +14,18 @@ public class GameState {
     boolean gameLost;
     boolean gameEnded;
 
+    //Added food to the food meter, and checks for over/underflow
     private void addFood(int newFood){
         this.food += newFood;
         if(this.food > 100) {
             this.food = 100;
         }
         else if(this.food <= 0){
+            this.food =0;
             gameLost = true;
         }
     }
+    //Adds mental health to the mental health meeting and checks for over/underflow
     private void addMentalHealth(int newHealth){
         this.mentalHealth += newHealth;
         if(this.mentalHealth > 100){
@@ -33,7 +36,7 @@ public class GameState {
             gameLost = true;
         }
     }
-
+    //Adds money and checks that money in not negative when amount added is negative
     private void addMoney(int newMoney){
         this.money += newMoney;
         if(this.money < 0){
@@ -41,10 +44,13 @@ public class GameState {
         }
     }
 
+    //Calculates the amount of food that gets lost for a task the takes timeInteral minutes
+    //Add subtracts that value from the food meter
     private void lossFoodOverTime(int timeInterval){
         addFood(timeInterval / -6);
     }
 
+    //Calculates the score that gets displayed at the end of the game
     public int calculateScore(){
         int score = 0;
         score += mentalHealth * 5;
@@ -66,6 +72,7 @@ public class GameState {
         return score;
     }
 
+    //Returns the current time of dally in a nicely formatted string to display to the user
     public String getTime(){
         int minute = time % 60;
         int hour = (time / 60) + 6;
@@ -73,10 +80,12 @@ public class GameState {
         return (hour <= 12 ? hour: hour -12) + ":" + (minute < 10 ? "0" + minute : minute) + (isAM ? " am" : " pm");
     }
 
+    //Returns the money the player as in a formatted string to display to the user
     public String getMoney(){
         return "$" + this.money + ".00";
     }
 
+    //Performs the needed calculations for going to sleep and update the class variables
     public void gotoSleep(){
         int minutesSlept = 1440 - time;
         if(minutesSlept >= 480){
@@ -112,6 +121,7 @@ public class GameState {
                 break;
         }
     }
+    //Functions for updating class variables when the user finishes a task
     public void doHomework(){
         this.hoursHomeworkDone += 1;
         this.time += 60;

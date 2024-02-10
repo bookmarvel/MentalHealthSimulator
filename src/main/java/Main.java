@@ -17,10 +17,10 @@ public class Main extends Application {
 	            // Read file fxml and draw interface.
 	            Parent root = FXMLLoader.load(getClass()
 	                    .getResource("/FXML/mainGamePage.fxml"));
-	 
-	            primaryStage.setTitle("Mental health simulation game");
-             Scene s1 = new Scene(root, 1000,500);
-             s1.getStylesheets().add("/styles/mainStyle.css");
+
+				primaryStage.setTitle("Mental health simulation game");
+             	Scene s1 = new Scene(root, 1000,500);
+             	s1.getStylesheets().add("/styles/mainStyle.css");
 	            primaryStage.setScene(s1);
 	            primaryStage.show();
 	         
