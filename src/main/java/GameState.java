@@ -29,6 +29,7 @@ public class GameState {
             this.mentalHealth = 100;
         }
         else if(this.mentalHealth <= 0){
+            this.mentalHealth = 0;
             gameLost = true;
         }
     }

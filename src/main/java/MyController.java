@@ -106,16 +106,8 @@ public class MyController{
 
 
     void updateGUI(){
-        if (Main.gameState.mentalHealth < 0) {
-            mentalHealthBar.setProgress(0);
-        } else {
-            mentalHealthBar.setProgress(Main.gameState.mentalHealth / 100.0);
-        }
-        if (Main.gameState.food < 0) {
-            foodBar.setProgress(0);
-        } else {
-            foodBar.setProgress(Main.gameState.food / 100.0);
-        }
+        mentalHealthBar.setProgress(Main.gameState.mentalHealth / 100.0);
+        foodBar.setProgress(Main.gameState.food / 100.0);
         moneyDisplay.setText(Main.gameState.getMoney());
         currTimeDisplay.setText(Main.gameState.getTime());
         currDayDisplay.setText(Main.gameState.day.toString());
