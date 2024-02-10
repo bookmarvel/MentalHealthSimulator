@@ -1,14 +1,11 @@
 
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -108,102 +105,84 @@ public class MyController implements Initializable {
     private Button bGoSleep;
 
 
+    void updateGUI(){
+
+    }
+
+    void checkGameLose(){
+
+    }
+
     // EVENT HANDLERS -------------------------------------------------------------------
 
+    void handleDoWork(ActionEvent e){
+        Main.gameState.doWork();
+        updateGUI();
+        checkGameLose();
+    }
+    void handleGoClass(ActionEvent e){
+        Main.gameState.gotoClass();
+        updateGUI();
+        checkGameLose();
+    }
+    void handleDoChores(ActionEvent e){
+        Main.gameState.doChores();
+        updateGUI();
+        checkGameLose();
+    }
+    void handleDoHW(ActionEvent e){
+        Main.gameState.doHomework();
+        updateGUI();
+        checkGameLose();
+    }
 
+    void handleWatchTv(ActionEvent e){
+        Main.gameState.watchTV();
+        updateGUI();
+        checkGameLose();
+    }
 
+    void handleTakeNap(ActionEvent e){
+        Main.gameState.takeNap();
+        updateGUI();
+        checkGameLose();
+    }
 
+    void handleGoWalk(ActionEvent e){
+        Main.gameState.takeWalk();
+        updateGUI();
+        checkGameLose();
+    }
 
+    void handleCookMeal(ActionEvent e){
+        Main.gameState.cookMeal();
+        updateGUI();
+        checkGameLose();
+    }
 
+    void handleOrderFood(ActionEvent e){
+        Main.gameState.orderFood();
+        updateGUI();
+        checkGameLose();
+    }
 
+    void handleMakeSnack(ActionEvent e){
+        Main.gameState.snack();
+        updateGUI();
+        checkGameLose();
+    }
 
-
-
-
-
-
-
-
-
-    // old things
-	@FXML
-	private BorderPane root2;
-    
-    @FXML
-    private TextField textField;
-    
-    @FXML
-    private TextField putText;
-    
-    //static so each instance of controller can access to update 
-    private static String textEntered = "";
-	
-	
+    void handleGotoSleep(ActionEvent e){
+        Main.gameState.gotoSleep();
+        updateGUI();
+        checkGameLose();
+        if(Main.gameState.gameEnded){
+            //TODO things when game ends
+        }
+    }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-        
 	}
-    //method so that the controller created for second view can update the text
-    //field with the text from the first view
-    public void setText(){
-        putText.setText(textEntered);
-        System.out.println("hello from setText");
-    }
-    
-    public void setText2(){
-        textField.setText(textEntered);
-        System.out.println("hello from setText");
-    }
-	
-	public void helloMethod(ActionEvent e) throws IOException {
-		
-        textEntered = textField.getText(); //get text entered by user
-        System.out.println(textEntered);
-        
-        //get instance of the loader class
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Myfxml2.fxml"));
-        Parent root2 = loader.load(); //load view into parent
-        MyController myctr = loader.getController();//get controller created by FXMLLoader
-        myctr.setText();//use MyLoader class method for setText()
-        
-        root2.getStylesheets().add("/styles/style2.css");//set style
-        
-        root.getScene().setRoot(root2);//update scene graph
-
-
-       	/* original way to load views...nothing shared across FXML files
-         
-         Parent root2 = FXMLLoader.load(getClass()
-                 .getResource("/FXML/Myfxml2.fxml"));
-        root2.getStylesheets().add("/styles/style2.css");
-		 
-		 root.getScene().setRoot(root2);
-       */
-        
-        
-	}
-	
-	public void b1Method(ActionEvent e) throws IOException{
-		
-        textEntered = putText.getText();
-        System.out.println(textEntered);
-        
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/mainGamePage.fxml"));
-        Parent root = loader.load();
-        MyController myctr = loader.getController();
-        myctr.setText2();
-        root2.getScene().setRoot(root);
-        
-        /*
-		Parent root = FXMLLoader.load(getClass()
-                .getResource("/FXML/mainGamePage.fxml"));
-		 
-		 root2.getScene().setRoot(root);
-         */
-	}
-	
-	
-
 }

@@ -8,8 +8,11 @@ import javafx.scene.Scene;
 
 
 public class Main extends Application {
+	static GameState gameState;
 	@Override
 	public void start(Stage primaryStage) {
+
+		gameState = new GameState();
 		 try {
 	            // Read file fxml and draw interface.
 	            Parent root = FXMLLoader.load(getClass()
