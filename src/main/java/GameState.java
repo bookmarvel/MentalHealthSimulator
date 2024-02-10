@@ -42,11 +42,19 @@ public class GameState {
         }
     }
 
+    private void lossFoodOverTime(int timeInterval){
+        addFood(timeInterval / -6);
+    }
+
     public String getTime(){
         int minute = time % 60;
         int hour = (time / 60) + 6;
         boolean isAM = hour < 12;
-        return hour % 12 + ":" + (minute < 10 ? "0" + minute: minute) + (isAM ? " am" : " pm");
+        return hour % 12 + ":" + (minute < 10 ? "0" + minute : minute) + (isAM ? " am" : " pm");
+    }
+
+    public String getMoney(){
+        return "$" + this.money + ".00";
     }
 
     public void gotoSleep(){
@@ -57,9 +65,11 @@ public class GameState {
         else{
             addMentalHealth(20 - ((480 - minutesSlept) / 3));
         }
+        this.time = 0;
+        lossFoodOverTime(minutesSlept / 2);
         switch (day){
             case SUNDAY:
-                day = DaysOfTheWeek.SUNDAY;
+                day = DaysOfTheWeek.MONDAY;
             case MONDAY:
                 day = DaysOfTheWeek.TUESDAY;
                 break;
@@ -82,34 +92,60 @@ public class GameState {
         }
     }
     public void doHomework(){
-
+        this.hoursHomeworkDone += 1;
+        this.time += 60;
+        lossFoodOverTime(60);
+        addMentalHealth(-15);
     }
 
     public void doWork(){
-
+        this.hoursWorked += 1;
+        this.time += 60;
+        lossFoodOverTime(60);
+        addMentalHealth(-20);
+        addMoney(15);
     }
     public void doChores(){
-
+        this.hoursOfChoresDone += 1;
+        this.time += 60;
+        lossFoodOverTime(60);
+        addMentalHealth(-5);
     }
     public void gotoClass(){
-
+        this.hoursOfClassDone += 1;
+        this.time += 60;
+        lossFoodOverTime(60);
+        addMentalHealth(-10);
     }
     public void watchTV(){
-
+        this.time += 60;
+        lossFoodOverTime(30);
+        addMentalHealth(25);
     }
     public void takeNap(){
-
+        this.time += 30;
+        lossFoodOverTime(30);
+        addMentalHealth(10);
     }
     public void takeWalk(){
-
+        this.time += 30;
+        lossFoodOverTime(30 * 2);
+        addMentalHealth(20);
     }
     public void cookMeal(){
-
+        this.time += 90;
+        addFood(60);
+        addMentalHealth(20);
+        addMoney(-5);
     }
     public void orderFood(){
-
+        this.time += 30;
+        addFood(60);
+        addMoney(-20);
     }
     public void snack(){
-
+        this.time += 15;
+        addFood(15);
+        addMoney(-5);
     }
 }
