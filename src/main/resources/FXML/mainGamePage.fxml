@@ -32,10 +32,32 @@
 							   editable="false"
 					/>
 				</HBox>
-				<ListView fx:id = "actionLog"
-						   prefWidth="600"
-						   prefHeight="130"
-				/>
+				<VBox>
+					<TextField fx:id="classLeftDisplay"
+							   text="Hours of class left in week: 15"
+							   prefWidth="600"
+							   prefHeight="32"
+							   editable="false"
+					/>
+					<TextField fx:id="homeworkLeftDisplay"
+							   text="Hours of homework left in week: 30"
+							   prefWidth="600"
+							   prefHeight="33"
+							   editable="false"
+					/>
+					<TextField fx:id="chorseLeftDisplay"
+							   text="Hours of class left in week: 5"
+							   prefWidth="600"
+							   prefHeight="32"
+							   editable="false"
+					/>
+					<TextField fx:id="jobLeftDisplay"
+							   text="Hours of homework left in week: 10"
+							   prefWidth="600"
+							   prefHeight="33"
+							   editable="false"
+					/>
+				</VBox>
 			</VBox>
 			<VBox fx:id = "right">
 				<TextField fx:id = "mentalHealthText"
@@ -61,7 +83,7 @@
 							 prefHeight="40"
 				/>
 				<TextField fx:id = "moneyDisplay"
-						   text="\$100"
+						   text="\$100.00"
 						   prefWidth="400"
 						   prefHeight="30"
 						   editable="false"

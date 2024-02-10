@@ -90,6 +90,7 @@ public class GameState {
         switch (day){
             case Sunday:
                 day = DaysOfTheWeek.Monday;
+                break;
             case Monday:
                 day = DaysOfTheWeek.Tuesday;
                 break;
