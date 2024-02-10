@@ -186,6 +186,8 @@ public class MyController{
             status = status + "you didn't take good enough care of your mental health";
         } else if (Main.gameState.food <= 0) {
             status = status + "you didn't eat enough food";
+        } else if (Main.gameState.money <= 0) {
+            status = status + "you ran out of money";
         } else {
             status = status + "you survived a week!";
         }
