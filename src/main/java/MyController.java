@@ -106,7 +106,8 @@ public class MyController implements Initializable {
 
 
     void updateGUI(){
-
+        mentalHealthBar.setProgress(Main.gameState.mentalHealth / 100.0);
+        foodBar.setProgress(Main.gameState.food / 100.0);
     }
 
     void checkGameLose(){
@@ -115,64 +116,64 @@ public class MyController implements Initializable {
 
     // EVENT HANDLERS -------------------------------------------------------------------
 
-    void handleDoWork(ActionEvent e){
+    public void handleDoWork(ActionEvent e){
         Main.gameState.doWork();
         updateGUI();
         checkGameLose();
     }
-    void handleGoClass(ActionEvent e){
+    public void handleGoClass(ActionEvent e){
         Main.gameState.gotoClass();
         updateGUI();
         checkGameLose();
     }
-    void handleDoChores(ActionEvent e){
+    public void handleDoChores(ActionEvent e){
         Main.gameState.doChores();
         updateGUI();
         checkGameLose();
     }
-    void handleDoHW(ActionEvent e){
+    public void handleDoHW(ActionEvent e){
         Main.gameState.doHomework();
         updateGUI();
         checkGameLose();
     }
 
-    void handleWatchTv(ActionEvent e){
+    public void handleWatchTv(ActionEvent e){
         Main.gameState.watchTV();
         updateGUI();
         checkGameLose();
     }
 
-    void handleTakeNap(ActionEvent e){
+    public void handleTakeNap(ActionEvent e){
         Main.gameState.takeNap();
         updateGUI();
         checkGameLose();
     }
 
-    void handleGoWalk(ActionEvent e){
+    public void handleGoWalk(ActionEvent e){
         Main.gameState.takeWalk();
         updateGUI();
         checkGameLose();
     }
 
-    void handleCookMeal(ActionEvent e){
+    public void handleCookMeal(ActionEvent e){
         Main.gameState.cookMeal();
         updateGUI();
         checkGameLose();
     }
 
-    void handleOrderFood(ActionEvent e){
+    public void handleOrderFood(ActionEvent e){
         Main.gameState.orderFood();
         updateGUI();
         checkGameLose();
     }
 
-    void handleMakeSnack(ActionEvent e){
+    public void handleMakeSnack(ActionEvent e){
         Main.gameState.snack();
         updateGUI();
         checkGameLose();
     }
 
-    void handleGotoSleep(ActionEvent e){
+    public void handleGotoSleep(ActionEvent e){
         Main.gameState.gotoSleep();
         updateGUI();
         checkGameLose();
