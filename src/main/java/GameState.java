@@ -70,7 +70,7 @@ public class GameState {
         int minute = time % 60;
         int hour = (time / 60) + 6;
         boolean isAM = hour < 12;
-        return hour % 12 + ":" + (minute < 10 ? "0" + minute : minute) + (isAM ? " am" : " pm");
+        return (hour <= 12 ? hour: hour -12) + ":" + (minute < 10 ? "0" + minute : minute) + (isAM ? " am" : " pm");
     }
 
     public String getMoney(){
@@ -90,6 +90,7 @@ public class GameState {
         switch (day){
             case Sunday:
                 day = DaysOfTheWeek.Monday;
+                break;
             case Monday:
                 day = DaysOfTheWeek.Tuesday;
                 break;
