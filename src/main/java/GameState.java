@@ -2,7 +2,7 @@ public class GameState {
     public enum DaysOfTheWeek {
         Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
     }
-    DaysOfTheWeek day;
+    DaysOfTheWeek day = DaysOfTheWeek.Sunday;
     int time;//Minutes since start of day
     int mentalHealth = 50; //Between 0-100 inclusive
     int food = 50; //Between 0-100 inclusive
@@ -42,6 +42,12 @@ public class GameState {
 
     private void lossFoodOverTime(int timeInterval){
         addFood(timeInterval / -6);
+    }
+
+    public int calculateScore(){
+        int score = 0;
+
+        return score;
     }
 
     public String getTime(){

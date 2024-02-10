@@ -13,7 +13,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class MyController implements Initializable {
+public class MyController{
 	
 	@FXML
 	private BorderPane root;
@@ -227,9 +227,4 @@ public class MyController implements Initializable {
             //TODO things when game ends
         }
     }
-
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-	}
 }
