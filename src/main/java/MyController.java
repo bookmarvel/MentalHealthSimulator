@@ -39,7 +39,7 @@ public class MyController implements Initializable {
     TextField currDayDisplay;
 
     @FXML
-    private TextField actionLog;
+    private ListView<String> actionLog;
 
     @FXML
     private VBox right;

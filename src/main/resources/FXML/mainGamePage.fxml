@@ -32,11 +32,9 @@
 							   editable="false"
 					/>
 				</HBox>
-				<TextField fx:id = "actionLog"
-						   text="change later to ListView"
+				<ListView fx:id = "actionLog"
 						   prefWidth="500"
 						   prefHeight="130"
-						   editable="false"
 				/>
 			</VBox>
 			<VBox fx:id = "right">
@@ -73,37 +71,28 @@
 	</top>
 
 	<center>
-		<VBox>
-			<HBox fx:id="buttonLayer1" alignment="CENTER">
-				<padding>
-					<Insets top="10" right="10" bottom="10" left="10"/>
-				</padding>
-				<Button fx:id = "bDoWork" text = "work" />
-				<Button fx:id = "bGoClass" text = "class" />
-				<Button fx:id = "bDoHW" text = "hw" />
-				<Button fx:id = "bDoChores" text = "chores" />
+		<VBox spacing="10">
+			<padding>
+				<Insets top="30" right="10" bottom="10" left="10"/>
+			</padding>
+			<HBox fx:id="buttonLayer1" alignment="CENTER" spacing="10">
+				<Button fx:id = "bDoWork" text = "work" styleClass="productive"/>
+				<Button fx:id = "bGoClass" text = "class" styleClass="productive"/>
+				<Button fx:id = "bDoHW" text = "hw" styleClass="productive"/>
+				<Button fx:id = "bDoChores" text = "chores" styleClass="productive"/>
 			</HBox>
-			<HBox fx:id="buttonLayer2" alignment="CENTER">
-				<padding>
-					<Insets top="10" right="10" bottom="10" left="10"/>
-				</padding>
-				<Button fx:id = "bWatchTV" text = "tv" />
-				<Button fx:id = "bTakeNap" text = "nap" />
-				<Button fx:id = "bGoWalk" text = "walk" />
+			<HBox fx:id="buttonLayer2" alignment="CENTER" spacing="10">
+				<Button fx:id = "bWatchTV" text = "tv" styleClass="relax"/>
+				<Button fx:id = "bTakeNap" text = "nap" styleClass="relax"/>
+				<Button fx:id = "bGoWalk" text = "walk" styleClass="relax"/>
 			</HBox>
-			<HBox fx:id="buttonLayer3" alignment="CENTER">
-				<padding>
-					<Insets top="10" right="10" bottom="10" left="10"/>
-				</padding>
-				<Button fx:id = "bCookMeal" text = "cook" />
-				<Button fx:id = "bOrderFood" text = "order out" />
-				<Button fx:id = "bMakeSnack" text = "snack" />
+			<HBox fx:id="buttonLayer3" alignment="CENTER" spacing="10">
+				<Button fx:id = "bCookMeal" text = "cook" styleClass="food"/>
+				<Button fx:id = "bOrderFood" text = "order out" styleClass="food"/>
+				<Button fx:id = "bMakeSnack" text = "snack" styleClass="food"/>
 			</HBox>
 			<HBox fx:id="buttonLayer4">
-				<padding>
-					<Insets top="10" right="10" bottom="10" left="10"/>
-				</padding>
-				<Button fx:id = "bGoSleep" text = "sleep" />
+				<Button fx:id = "bGoSleep" text = "sleep" styleClass="sleep"/>
 			</HBox>
 		</VBox>
 	</center>

@@ -1,15 +1,39 @@
-.button{
-	-fx-font-size: 16px;
+Button{
+	-fx-font-size: 24px;
 	-fx-font-weight: bold;
 	-fx-pref-height: 40;
-	-fx-background-color: green
+	-fx-border-width: 2;
+	-fx-border-color: midnightblue;
 }
 
+.productive{
+	-fx-background-color: orange;
+}
+
+.relax{
+	-fx-background-color: lightskyblue;
+}
+
+.food{
+	-fx-background-color: lightcoral;
+}
+
+.sleep{
+	-fx-background-color: deepskyblue;
+}
+
+#mentalHealthBar{
+	-fx-accent: mediumslateblue;
+}
+
+#foodBar{
+	-fx-accent: coral;
+}
 
 .borderpane{
-	-fx-background-color: purple;
+	-fx-background-color: plum;
 }
 
-.displays{
-	-fx-background-color: pink;
+.displayText{
+	-fx-font-size: 14;
 }
