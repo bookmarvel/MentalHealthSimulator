@@ -18,7 +18,7 @@ public class Main extends Application {
 	            Parent root = FXMLLoader.load(getClass()
 	                    .getResource("/FXML/mainGamePage.fxml"));
 	 
-	            primaryStage.setTitle("My Application");
+	            primaryStage.setTitle("Mental health simulation game");
              Scene s1 = new Scene(root, 1000,500);
              s1.getStylesheets().add("/styles/mainStyle.css");
 	            primaryStage.setScene(s1);

@@ -39,9 +39,6 @@ public class MyController{
     TextField currDayDisplay;
 
     @FXML
-    private ListView<String> actionLog;
-
-    @FXML
     private VBox right;
 
     @FXML
@@ -59,6 +56,17 @@ public class MyController{
     @FXML
     private TextField moneyDisplay;
 
+    @FXML
+    private TextField classLeftDisplay;
+
+    @FXML
+    private TextField homeworkLeftDisplay;
+
+    @FXML
+    private TextField choresLeftDisplay;
+
+    @FXML
+    private TextField jobLeftDisplay;
 
     // BUTTONS  -------------------------------------------------------------------------
 
@@ -133,6 +141,10 @@ public class MyController{
         moneyDisplay.setText(Main.gameState.getMoney());
         currTimeDisplay.setText(Main.gameState.getTime());
         currDayDisplay.setText(Main.gameState.day.toString());
+        classLeftDisplay.setText("Hours of class left in week: " + (15 - Main.gameState.hoursOfClassDone));
+        homeworkLeftDisplay.setText("Hours of homework left in week: " + (30 - Main.gameState.hoursHomeworkDone));
+        choresLeftDisplay.setText("Hours of chores left in week: " + (5 - Main.gameState.hoursOfChoresDone));
+        jobLeftDisplay.setText("Hours of work left in week: " + (10 - Main.gameState.hoursWorked));
 
         int timeLeftInDay = 1080 - Main.gameState.time;
 
