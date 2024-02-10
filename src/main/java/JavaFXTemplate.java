@@ -27,7 +27,7 @@ public class JavaFXTemplate extends Application{
 	TextField text; 
 	Button addToListBtn, sceneChangeBtn, b4,b5,b6,b7, printListBtn;  
 	HashMap<String, Scene> sceneMap; 
-	GenericQueue<String> myQueue;
+	//GenericQueue<String> myQueue;
 	EventHandler<ActionEvent> returnButtons;
 	ListView<String> displayQueueItems;
 	//use this to add and delete from ListView
@@ -61,7 +61,7 @@ public void start(Stage primaryStage) throws Exception {
 	printListBtn = new Button("PrintList");
 	sceneMap = new HashMap<String,Scene>();
 	//stores strings: from your project #1
-	myQueue = new GenericQueue<String>(" ");
+	//myQueue = new GenericQueue<String>(" ");
 	displayQueueItems = new ListView<String>();
 	//initialize to an observable list
 	storeQueueItemsInListView = FXCollections.observableArrayList();
@@ -86,11 +86,7 @@ public void start(Stage primaryStage) throws Exception {
 			"-fx-border-color: purple;");
 	
 	//using lambda for EventHandler: press enter adds info from text field to queue
-	text.setOnKeyPressed(e -> {if(e.getCode().equals(KeyCode.ENTER)){
-							myQueue.enqueue(text.getText());
-							text.clear();
-							}
-        });
+	// text.setOnKeyPressed();
 	
 	//pause for 3 seconds then switch scene from picture buttons to original layout
 	pause.setOnFinished(e->primaryStage.setScene(sceneMap.get("scene")));
@@ -105,13 +101,13 @@ public void start(Stage primaryStage) throws Exception {
 		}
 	};
 	
-	//add queue items to observable list and display inside of ListView
+	//add queue items to observable list and display inside ListView
 	printListBtn.setOnAction(e-> {displayQueueItems.getItems().removeAll(storeQueueItemsInListView);
 								storeQueueItemsInListView.clear();
-								Iterator<String> i = myQueue.createIterator();
-								while(i.hasNext()) { 
-									storeQueueItemsInListView.add(i.next());
-								}
+//								Iterator<String> i = myQueue.createIterator();
+//								while(i.hasNext()) {
+//									storeQueueItemsInListView.add(i.next());
+//								}
 								  displayQueueItems.setItems(storeQueueItemsInListView);});
 	
 							//add single strings: displayQueueItems.getItems().add("hello");
@@ -122,7 +118,7 @@ public void start(Stage primaryStage) throws Exception {
 	addToListBtn.setOnAction(new EventHandler<ActionEvent>(){
 		
 		public void handle(ActionEvent event){
-			myQueue.enqueue(text.getText());;
+			// myQueue.enqueue(text.getText());;
 			text.clear();
 			
 		}
