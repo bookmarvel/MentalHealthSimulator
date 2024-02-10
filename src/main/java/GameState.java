@@ -8,9 +8,9 @@ public class GameState {
     int food = 50; //Between 0-100 inclusive
     int money = 100;
     int hoursWorked;
-    double hoursHomeworkDone;
-    double hoursOfChoresDone;
-    double hoursOfClassDone;
+    int hoursHomeworkDone;
+    int hoursOfChoresDone;
+    int hoursOfClassDone;
     boolean gameLost;
     boolean gameEnded;
 
@@ -46,6 +46,21 @@ public class GameState {
 
     public int calculateScore(){
         int score = 0;
+        score += mentalHealth * 5;
+        score += food * 3;
+        score += money;
+        if(hoursWorked < 10){
+            score -= (10 - hoursWorked) * 10;
+        }
+        if(hoursOfChoresDone < 5){
+            score -= (5 - hoursOfChoresDone) * 10;
+        }
+        if(hoursOfClassDone < 15){
+            score -= (15 - hoursOfClassDone) * 10;
+        }
+        if(hoursHomeworkDone < 30){
+            score -= (30 - hoursHomeworkDone) * 10;
+        }
 
         return score;
     }
